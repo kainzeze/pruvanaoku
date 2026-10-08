@@ -1,4 +1,4 @@
-DirectoryIndex index.html
+DirectoryIndex index.php
 
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
@@ -8,6 +8,8 @@ DirectoryIndex index.html
 
 RewriteEngine On
 RewriteRule ^_kaynak(/|$) - [F]
+RewriteRule ^partials(/|$) - [F]
+RewriteRule ^(index|hakkimizda|siniflarimiz|gorsel-galeri|okul-gorselleri|brans-dersleri|kayitlar|iletisim)\.html$ $1.php [R=301,L,QSA]
 
 <FilesMatch "\.(py|json)$">
   Require all denied

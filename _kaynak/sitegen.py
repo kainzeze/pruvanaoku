@@ -7,7 +7,6 @@ BEBEK = f"{IC}/11062b_93788172d8cc4931a7e2160caa259c43.svg"
 OYUN = f"{IC}/11062b_e368f3f2ade846a8a6611947f3abb241.svg"
 KUTU = f"{IC}/11062b_6250c5d5d61448daa12dbbddd6fba029.svg"
 KUS = f"{IC}/2e2a49_c52f797c3a4c48c88245e42a45c62ff2.svg"
-INFO = f"{IC}/11062b_b0f0013ffadd4a908c80e14e33d13fa7.svg"
 SAAT = f"{IC}/2e2a49_319bbd73b9044a44b81e47a4f78a9a93.svg"
 KONUM = f"{IC}/2e2a49_a23b983734c8437282ab7f798331146d.svg"
 SANAT = f"{IC}/2e2a49_6e243609b37d464d9ca6059b53aa5217.svg"
@@ -15,22 +14,16 @@ MUZIK = f"{IC}/2e2a49_6b6c957ab7e24a1eaa95a0e22276f108.svg"
 SPOR = f"{IC}/2e2a49_341f12a2847c42e0ba4bbf73ce964f08.svg"
 DIL = f"{IC}/2e2a49_e685781283484a1fa38933f48a1f8ea4.svg"
 
-PAGES = [
-    ("index.html", "Anasayfa", "Özel Mersin Mavi Pruva Anaokulu"),
-    ("hakkimizda.html", "Hakkımızda", "Hakkımızda | Özel Mersin Mavi Pruva Anaokulu"),
-    ("siniflarimiz.html", "Sınıflarımız", "Sınıflarımız | Özel Mersin Mavi Pruva Anaokulu"),
-    ("gorsel-galeri.html", "Görsel Galeri", "Görsel Galeri | Özel Mersin Mavi Pruva Anaokulu"),
-    ("okul-gorselleri.html", "Okul Görselleri", "Okul Görselleri | Özel Mersin Mavi Pruva Anaokulu"),
-    ("brans-dersleri.html", "Branş Dersleri", "Branş Dersleri | Özel Mersin Mavi Pruva Anaokulu"),
-    ("kayitlar.html", "Kayıtlar", "Kayıtlar | Özel Mersin Mavi Pruva Anaokulu"),
-    ("iletisim.html", "İletişim", "İletişim | Özel Mersin Mavi Pruva Anaokulu"),
-]
-
 def shell(filename, title, body, extra=""):
-    nav = []
-    for href, label, _ in PAGES:
-        current = ' aria-current="page"' if href == filename else ""
-        nav.append(f'<li><a href="{href}"{current}>{label}</a></li>')
+    home = filename == "index.php"
+    if home:
+        top = """  <div class="opening">
+    <?php include __DIR__ . '/partials/header.html'; ?>
+    <section class="hero"><img src="images/hero.jpg" alt="Özel Mersin Mavi Pruva Anaokulu binası"><div class="hero-actions"><a class="btn btn-solid" href="kayitlar.php">Kayıt ve randevu</a><a class="btn btn-wa" href="https://wa.me/905324637882" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></section>
+  </div>"""
+    else:
+        top = "  <?php include __DIR__ . '/partials/header.html'; ?>"
+    body_class = ' class="home"' if home else ""
     return f"""<!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -44,39 +37,13 @@ def shell(filename, title, body, extra=""):
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <div class="topbar">
-    <img src="{INFO}" alt="">
-    <span>ÖNCE GÜVENLİK! Anaokulumuzda çocuklarınızın güvenliğini sağlamak için ek önlemler alıyoruz.</span>
-  </div>
-  <header class="site-header">
-    <a class="logo" href="index.html"><img src="images/logo.png" alt="Özel Mersin Mavi Pruva Anaokulu"></a>
-    <button class="nav-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
-    <nav aria-label="Site">
-      <ul class="menu">
-        {''.join(nav)}
-      </ul>
-    </nav>
-  </header>
+<body{body_class}>
+{top}
   <main>
 {body}
   </main>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <p>© 2026 Özel Mersin Mavi PRUVA Anaokulu. Tüm Hakları Saklıdır.</p>
-        <p>Esenbağlar Mh. 71048 Sk. No:5 Mezitli/Mersin</p>
-        <p>İletişim: <a href="tel:+905324637882">05324637882</a></p>
-      </div>
-      <div class="social">
-        <a href="https://www.instagram.com/pruvaanaokulu" target="_blank" rel="noopener noreferrer"><img src="images/ig.png" alt="Instagram"></a>
-        <a href="https://wa.me/905324637882" target="_blank" rel="noopener noreferrer"><img src="images/wa.png" alt="Whatsapp"></a>
-        <a href="https://www.facebook.com/share/1LUixD4MqT/" target="_blank" rel="noopener noreferrer"><img src="images/fb.png" alt="Facebook"></a>
-      </div>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/partials/footer.html'; ?>
   {extra}
-  <script src="js/site.js"></script>
 </body>
 </html>
 """
@@ -104,10 +71,8 @@ for i, (text, who, role) in enumerate(quotes):
     quote_html.append(f'''<article class="{cls}"><h2>Ebeveynler Ne Düşünüyor?</h2><p class="text">{text}</p><p class="who">{who}</p><p class="role">{role}</p></article>''')
 
 index = f'''
-  <section class="hero"><img src="images/hero.jpg" alt="Özel Mersin Mavi Pruva Anaokulu binası"></section>
   <section class="wrap center">
     <h2 class="section-title">SINIFLARIMIZ (2-6 yaş)</h2>
-    <p class="subhead"><a href="siniflarimiz.html">Our Learning Environments</a></p>
     <div class="cards">
       {home_cards}
     </div>
@@ -118,7 +83,7 @@ index = f'''
       <div class="copy">
         <h2>Eğitim Felsefemiz</h2>
         <p>Özel Mersin Mavi Pruva Anaokulu olarak, çocuklarımızın doğal meraklarını ve keşfetme arzularını merkeze alan bir eğitim modeli uyguluyoruz. Oyun temelli öğrenme, sevgi dolu bir çevre ve bireysel gelişimi destekleyen etkinliklerimizle miniklerimizin güvenle, mutlulukla ve özgüvenle büyümelerine rehberlik ediyoruz.</p>
-        <a class="btn" href="hakkimizda.html">Hakkımızda</a>
+        <a class="btn" href="hakkimizda.php">Hakkımızda</a>
       </div>
     </div>
   </section>
@@ -164,7 +129,7 @@ siniflar = f'''
   </section>
 '''
 
-def gallery(folder, count, square=False):
+def gallery(folder, count, title, square=False):
     cls = "gallery square" if square else "gallery"
     buttons = []
     for i in range(1, count + 1):
@@ -172,6 +137,7 @@ def gallery(folder, count, square=False):
         buttons.append(f'<button type="button"><img src="{src}" data-full="{src}" alt="Okul görseli {i}"></button>')
     return f'''
   <section class="wrap">
+    <div class="page-title"><span class="eyebrow">{title}</span></div>
     <div class="{cls}">{''.join(buttons)}</div>
   </section>
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Görsel">
@@ -200,14 +166,14 @@ brans_page = f'''
 '''
 
 kayitlar = '''
-  <section class="hero"><img src="images/hero.jpg" alt="Okul binası"></section>
+  <section class="page-hero"><img src="images/hero.jpg" alt="Okul binası"></section>
   <section class="wrap center">
     <span class="eyebrow">Kayıtlar</span>
     <h2 class="section-title">Gelecek Yıl İçin Başvuruların Kabulü</h2>
     <h3>Ön Kayıt &amp; Randevu</h3>
     <p>Çocuğunuzun geleceğine birlikte yön vermek ve okulumuzu yakından tanımak için sizleri ağırlamaktan mutluluk duyarız. Sınırlı kontenjanlarımızdan yararlanmak ve okul turu randevusu oluşturmak için iletişim seçeneğinden formu doldurabilir veya hemen bizimle iletişime geçebilirsiniz.</p>
     <p><a class="btn" href="tel:+905324637882">Daha fazla bilgi için 05324637882</a></p>
-    <p><a class="btn" href="iletisim.html">İletişim formu</a></p>
+    <p><a class="btn" href="iletisim.php">İletişim formu</a></p>
   </section>
 '''
 
@@ -261,23 +227,29 @@ iletisim = '''
 '''
 
 pages = {
-    "index.html": ("Özel Mersin Mavi Pruva Anaokulu | anaokulu | Esenbağlar, Mezitli/Mersin", index, ""),
-    "hakkimizda.html": ("Hakkımızda | Özel Mersin Mavi Pruva Anaokulu", hakkimizda, ""),
-    "siniflarimiz.html": ("Sınıflarımız | Özel Mersin Mavi Pruva Anaokulu", siniflar, ""),
-    "gorsel-galeri.html": ("Görsel Galeri | Özel Mersin Mavi Pruva Anaokulu", gallery("galeri", 36), ""),
-    "okul-gorselleri.html": ("Okul Görselleri | Özel Mersin Mavi Pruva Anaokulu", gallery("okul", 17, square=True), ""),
-    "brans-dersleri.html": ("Branş Dersleri | Özel Mersin Mavi Pruva Anaokulu", brans_page, ""),
-    "kayitlar.html": ("Kayıtlar | Özel Mersin Mavi Pruva Anaokulu", kayitlar, ""),
-    "iletisim.html": ("İletişim | Özel Mersin Mavi Pruva Anaokulu", iletisim, ""),
+    "index.php": ("Özel Mersin Mavi Pruva Anaokulu | anaokulu | Esenbağlar, Mezitli/Mersin", index, ""),
+    "hakkimizda.php": ("Hakkımızda | Özel Mersin Mavi Pruva Anaokulu", hakkimizda, ""),
+    "siniflarimiz.php": ("Sınıflarımız | Özel Mersin Mavi Pruva Anaokulu", siniflar, ""),
+    "gorsel-galeri.php": ("Görsel Galeri | Özel Mersin Mavi Pruva Anaokulu", gallery("galeri", 36, "Görsel Galeri"), ""),
+    "okul-gorselleri.php": ("Okul Görselleri | Özel Mersin Mavi Pruva Anaokulu", gallery("okul", 17, "Okul Görselleri", square=True), ""),
+    "brans-dersleri.php": ("Branş Dersleri | Özel Mersin Mavi Pruva Anaokulu", brans_page, ""),
+    "kayitlar.php": ("Kayıtlar | Özel Mersin Mavi Pruva Anaokulu", kayitlar, ""),
+    "iletisim.php": ("İletişim | Özel Mersin Mavi Pruva Anaokulu", iletisim, ""),
 }
 
 for name, (title, body, extra) in pages.items():
     (root / name).write_text(shell(name, title, body, extra), encoding="utf-8")
     print("wrote", name)
 
+for old in [name.replace(".php", ".html") for name in pages]:
+    stale = root / old
+    if stale.exists():
+        stale.unlink()
+        print("removed", old)
+
 sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for name in pages:
-    loc = "https://mavipruvaanaokulu.com/" if name == "index.html" else "https://mavipruvaanaokulu.com/" + name
+    loc = "https://mavipruvaanaokulu.com/" if name == "index.php" else "https://mavipruvaanaokulu.com/" + name
     sitemap.append(f"<url><loc>{loc}</loc></url>")
 sitemap.append("</urlset>")
 (root / "sitemap.xml").write_text("\n".join(sitemap), encoding="utf-8")

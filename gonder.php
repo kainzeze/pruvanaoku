@@ -8,7 +8,7 @@
 declare(strict_types=1);
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: iletisim.html');
+    header('Location: iletisim.php');
     exit;
 }
 
@@ -22,13 +22,13 @@ function clean(string $value, int $max): string
 }
 
 if (trim((string)($_POST['website'] ?? '')) !== '') {
-    header('Location: iletisim.html?durum=ok');
+    header('Location: iletisim.php?durum=ok');
     exit;
 }
 
 $started = (int)($_POST['baslangic'] ?? 0);
 if ($started > 0 && (time() - $started) < 3) {
-    header('Location: iletisim.html?durum=hata');
+    header('Location: iletisim.php?durum=hata');
     exit;
 }
 
@@ -40,7 +40,7 @@ $mesaj = clean((string)($_POST['mesaj'] ?? ''), 4000);
 
 $gecerli = $ad !== '' && $soyad !== '' && $telefon !== '' && filter_var($email, FILTER_VALIDATE_EMAIL);
 if (!$gecerli) {
-    header('Location: iletisim.html?durum=hata');
+    header('Location: iletisim.php?durum=hata');
     exit;
 }
 
@@ -50,5 +50,5 @@ $body = "Ad: {$ad}\nSoyad: {$soyad}\nE-posta: {$email}\nTelefon: {$telefon}\n\nM
 $headers = "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nReply-To: {$email}\r\n";
 
 $sent = @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers);
-header('Location: iletisim.html?durum=' . ($sent ? 'ok' : 'hata'));
+header('Location: iletisim.php?durum=' . ($sent ? 'ok' : 'hata'));
 exit;

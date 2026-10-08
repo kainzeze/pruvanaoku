@@ -1,0 +1,31 @@
+<?php
+$current = basename(str_replace('\\', '/', (string)parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH)));
+if ($current === '' || $current === '/') {
+    $current = 'index.php';
+}
+$nav = [
+    'index.php' => 'Anasayfa',
+    'hakkimizda.php' => 'Hakkımızda',
+    'siniflarimiz.php' => 'Sınıflarımız',
+    'gorsel-galeri.php' => 'Görsel Galeri',
+    'okul-gorselleri.php' => 'Okul Görselleri',
+    'brans-dersleri.php' => 'Branş Dersleri',
+    'kayitlar.php' => 'Kayıtlar',
+    'iletisim.php' => 'İletişim',
+];
+?>
+<div class="topbar">
+  <img src="images/icons/11062b_b0f0013ffadd4a908c80e14e33d13fa7.svg" alt="">
+  <span>ÖNCE GÜVENLİK! Anaokulumuzda çocuklarınızın güvenliğini sağlamak için ek önlemler alıyoruz.</span>
+</div>
+<header class="site-header">
+  <a class="logo" href="index.php"><img src="images/logo.png" alt="Özel Mersin Mavi Pruva Anaokulu"></a>
+  <button class="nav-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
+  <nav aria-label="Site">
+    <ul class="menu">
+<?php foreach ($nav as $href => $label): ?>
+      <li><a href="<?php echo htmlspecialchars($href, ENT_QUOTES, 'UTF-8'); ?>"<?php if ($href === $current) { echo ' aria-current="page"'; } ?>><?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?></a></li>
+<?php endforeach; ?>
+    </ul>
+  </nav>
+</header>

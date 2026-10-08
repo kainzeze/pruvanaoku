@@ -12,22 +12,11 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="topbar">
-    <img src="images/icons/11062b_b0f0013ffadd4a908c80e14e33d13fa7.svg" alt="">
-    <span>ÖNCE GÜVENLİK! Anaokulumuzda çocuklarınızın güvenliğini sağlamak için ek önlemler alıyoruz.</span>
-  </div>
-  <header class="site-header">
-    <a class="logo" href="index.html"><img src="images/logo.png" alt="Özel Mersin Mavi Pruva Anaokulu"></a>
-    <button class="nav-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
-    <nav aria-label="Site">
-      <ul class="menu">
-        <li><a href="index.html">Anasayfa</a></li><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="siniflarimiz.html">Sınıflarımız</a></li><li><a href="gorsel-galeri.html">Görsel Galeri</a></li><li><a href="okul-gorselleri.html" aria-current="page">Okul Görselleri</a></li><li><a href="brans-dersleri.html">Branş Dersleri</a></li><li><a href="kayitlar.html">Kayıtlar</a></li><li><a href="iletisim.html">İletişim</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php include __DIR__ . '/partials/header.html'; ?>
   <main>
 
   <section class="wrap">
+    <div class="page-title"><span class="eyebrow">Okul Görselleri</span></div>
     <div class="gallery square"><button type="button"><img src="images/okul/01.jpg" data-full="images/okul/01.jpg" alt="Okul görseli 1"></button><button type="button"><img src="images/okul/02.jpg" data-full="images/okul/02.jpg" alt="Okul görseli 2"></button><button type="button"><img src="images/okul/03.jpg" data-full="images/okul/03.jpg" alt="Okul görseli 3"></button><button type="button"><img src="images/okul/04.jpg" data-full="images/okul/04.jpg" alt="Okul görseli 4"></button><button type="button"><img src="images/okul/05.jpg" data-full="images/okul/05.jpg" alt="Okul görseli 5"></button><button type="button"><img src="images/okul/06.jpg" data-full="images/okul/06.jpg" alt="Okul görseli 6"></button><button type="button"><img src="images/okul/07.jpg" data-full="images/okul/07.jpg" alt="Okul görseli 7"></button><button type="button"><img src="images/okul/08.jpg" data-full="images/okul/08.jpg" alt="Okul görseli 8"></button><button type="button"><img src="images/okul/09.jpg" data-full="images/okul/09.jpg" alt="Okul görseli 9"></button><button type="button"><img src="images/okul/10.jpg" data-full="images/okul/10.jpg" alt="Okul görseli 10"></button><button type="button"><img src="images/okul/11.jpg" data-full="images/okul/11.jpg" alt="Okul görseli 11"></button><button type="button"><img src="images/okul/12.jpg" data-full="images/okul/12.jpg" alt="Okul görseli 12"></button><button type="button"><img src="images/okul/13.jpg" data-full="images/okul/13.jpg" alt="Okul görseli 13"></button><button type="button"><img src="images/okul/14.jpg" data-full="images/okul/14.jpg" alt="Okul görseli 14"></button><button type="button"><img src="images/okul/15.jpg" data-full="images/okul/15.jpg" alt="Okul görseli 15"></button><button type="button"><img src="images/okul/16.jpg" data-full="images/okul/16.jpg" alt="Okul görseli 16"></button><button type="button"><img src="images/okul/17.jpg" data-full="images/okul/17.jpg" alt="Okul görseli 17"></button></div>
   </section>
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Görsel">
@@ -38,21 +27,7 @@
   </div>
 
   </main>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <p>© 2026 Özel Mersin Mavi PRUVA Anaokulu. Tüm Hakları Saklıdır.</p>
-        <p>Esenbağlar Mh. 71048 Sk. No:5 Mezitli/Mersin</p>
-        <p>İletişim: <a href="tel:+905324637882">05324637882</a></p>
-      </div>
-      <div class="social">
-        <a href="https://www.instagram.com/pruvaanaokulu" target="_blank" rel="noopener noreferrer"><img src="images/ig.png" alt="Instagram"></a>
-        <a href="https://wa.me/905324637882" target="_blank" rel="noopener noreferrer"><img src="images/wa.png" alt="Whatsapp"></a>
-        <a href="https://www.facebook.com/share/1LUixD4MqT/" target="_blank" rel="noopener noreferrer"><img src="images/fb.png" alt="Facebook"></a>
-      </div>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/partials/footer.html'; ?>
   
-  <script src="js/site.js"></script>
 </body>
 </html>

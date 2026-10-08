@@ -11,26 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <div class="topbar">
-    <img src="images/icons/11062b_b0f0013ffadd4a908c80e14e33d13fa7.svg" alt="">
-    <span>ÖNCE GÜVENLİK! Anaokulumuzda çocuklarınızın güvenliğini sağlamak için ek önlemler alıyoruz.</span>
+<body class="home">
+  <div class="opening">
+    <?php include __DIR__ . '/partials/header.html'; ?>
+    <section class="hero"><img src="images/hero.jpg" alt="Özel Mersin Mavi Pruva Anaokulu binası"><div class="hero-actions"><a class="btn btn-solid" href="kayitlar.php">Kayıt ve randevu</a><a class="btn btn-wa" href="https://wa.me/905324637882" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></section>
   </div>
-  <header class="site-header">
-    <a class="logo" href="index.html"><img src="images/logo.png" alt="Özel Mersin Mavi Pruva Anaokulu"></a>
-    <button class="nav-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
-    <nav aria-label="Site">
-      <ul class="menu">
-        <li><a href="index.html" aria-current="page">Anasayfa</a></li><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="siniflarimiz.html">Sınıflarımız</a></li><li><a href="gorsel-galeri.html">Görsel Galeri</a></li><li><a href="okul-gorselleri.html">Okul Görselleri</a></li><li><a href="brans-dersleri.html">Branş Dersleri</a></li><li><a href="kayitlar.html">Kayıtlar</a></li><li><a href="iletisim.html">İletişim</a></li>
-      </ul>
-    </nav>
-  </header>
   <main>
 
-  <section class="hero"><img src="images/hero.jpg" alt="Özel Mersin Mavi Pruva Anaokulu binası"></section>
   <section class="wrap center">
     <h2 class="section-title">SINIFLARIMIZ (2-6 yaş)</h2>
-    <p class="subhead"><a href="siniflarimiz.html">Our Learning Environments</a></p>
     <div class="cards">
       <article class="card"><img class="icon" src="images/icons/11062b_93788172d8cc4931a7e2160caa259c43.svg" alt=""><h3>Bebek / Oyun Grubu</h3><p>24 ayını doldurmuş miniklerimiz için güvenli, şefkatli ve uyarıcı bir ortam sunuyoruz. Duyusal oyunlar, motor beceri geliştirici etkinlikler ve bireysel ilgiyle ilk sosyalleşme adımlarını güvenle atmalarını sağlıyoruz.</p></article>
 <article class="card"><img class="icon" src="images/icons/11062b_e368f3f2ade846a8a6611947f3abb241.svg" alt=""><h3>Oyun &amp; Maceracılar</h3><p>2-3 yaş arası çocukların merak ve keşfetme arzusunu destekliyoruz. Dil gelişimi, ince-kaba motor becerileri ve paylaşma duygusunu pekiştiren eğlenceli ve etkileşimli aktivitelerle özgüven inşa ediyoruz.</p></article>
@@ -44,7 +33,7 @@
       <div class="copy">
         <h2>Eğitim Felsefemiz</h2>
         <p>Özel Mersin Mavi Pruva Anaokulu olarak, çocuklarımızın doğal meraklarını ve keşfetme arzularını merkeze alan bir eğitim modeli uyguluyoruz. Oyun temelli öğrenme, sevgi dolu bir çevre ve bireysel gelişimi destekleyen etkinliklerimizle miniklerimizin güvenle, mutlulukla ve özgüvenle büyümelerine rehberlik ediyoruz.</p>
-        <a class="btn" href="hakkimizda.html">Hakkımızda</a>
+        <a class="btn" href="hakkimizda.php">Hakkımızda</a>
       </div>
     </div>
   </section>
@@ -55,21 +44,7 @@
   </section>
 
   </main>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <p>© 2026 Özel Mersin Mavi PRUVA Anaokulu. Tüm Hakları Saklıdır.</p>
-        <p>Esenbağlar Mh. 71048 Sk. No:5 Mezitli/Mersin</p>
-        <p>İletişim: <a href="tel:+905324637882">05324637882</a></p>
-      </div>
-      <div class="social">
-        <a href="https://www.instagram.com/pruvaanaokulu" target="_blank" rel="noopener noreferrer"><img src="images/ig.png" alt="Instagram"></a>
-        <a href="https://wa.me/905324637882" target="_blank" rel="noopener noreferrer"><img src="images/wa.png" alt="Whatsapp"></a>
-        <a href="https://www.facebook.com/share/1LUixD4MqT/" target="_blank" rel="noopener noreferrer"><img src="images/fb.png" alt="Facebook"></a>
-      </div>
-    </div>
-  </footer>
+  <?php include __DIR__ . '/partials/footer.html'; ?>
   
-  <script src="js/site.js"></script>
 </body>
 </html>
