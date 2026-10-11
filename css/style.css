@@ -34,18 +34,6 @@ h1, h2, h3 {
 }
 p { margin: 0 0 0.8em; }
 
-.topbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px 0;
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.25;
-}
-.topbar img { width: 18px; height: 18px; flex: 0 0 auto; }
-
 .site-header {
   display: flex;
   align-items: center;
@@ -56,7 +44,7 @@ p { margin: 0 0 0.8em; }
   padding: 4px 28px 8px;
 }
 .logo { flex: 0 0 auto; }
-.logo img { width: 108px; max-width: none; height: auto; background: #fff; }
+.logo img { width: 108px; max-width: none; height: auto; background: transparent; }
 
 .opening {
   flex: 0 0 auto;
@@ -114,6 +102,48 @@ p { margin: 0 0 0.8em; }
   white-space: nowrap;
 }
 .menu a[aria-current="page"] { color: var(--orange); }
+.safety { position: relative; display: flex; align-items: center; }
+.safety-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.safety-btn img { width: 22px; height: 22px; }
+.safety-note {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: min(280px, 72vw);
+  margin-top: 8px;
+  padding: 12px 14px;
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(33, 52, 114, 0.16);
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  z-index: 8;
+}
+.safety-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  height: 10px;
+}
+.safety:hover .safety-note,
+.safety:focus-within .safety-note,
+.safety.open .safety-note { display: block; }
 
 .hero { width: 100%; max-height: 640px; overflow: hidden; background: #d9e6f2; }
 .hero img { width: 100%; height: min(62vw, 640px); object-fit: cover; object-position: center 68%; }
@@ -377,6 +407,12 @@ textarea { min-height: 120px; resize: vertical; }
   }
   .menu.open { display: flex; }
   .site-header { position: relative; }
+  .safety { flex-direction: column; align-items: flex-start; }
+  .safety-note {
+    position: static;
+    width: 210px;
+    margin-top: 8px;
+  }
 }
 @media (max-width: 720px) {
   .cards, .gallery, .grid-3, .grid-2 { grid-template-columns: 1fr; }
