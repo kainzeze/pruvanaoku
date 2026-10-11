@@ -43,7 +43,7 @@
           <h2>Bizi Ziyaret Edin</h2>
           <p>Esenbağlar Mh. 71048 Sk. No:5 Mezitli/Mersin</p>
           <p>Tel: <a href="tel:+905324637882">05324637882</a></p>
-          <p>Mail: <a href="mailto:pruvaanaokulu@gmail.com">pruvaanaokulu@gmail.com</a></p>
+          <p>Mail: <a href="mailto:bilgi@pruvaanaokulu.com">bilgi@pruvaanaokulu.com</a></p>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
       note.textContent = "Mesajınız alındı. En kısa sürede size dönüş yapacağız.";
     } else if (durum === "hata") {
       note.hidden = false;
-      note.textContent = "Mesaj gönderilemedi. Lütfen 0532 463 78 82 numarasını arayın veya pruvaanaokulu@gmail.com adresine yazın.";
+      note.textContent = "Mesaj gönderilemedi. Lütfen 0532 463 78 82 numarasını arayın veya bilgi@pruvaanaokulu.com adresine yazın.";
     }
   </script>
 
