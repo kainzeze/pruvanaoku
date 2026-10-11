@@ -9,10 +9,12 @@ KUTU = f"{IC}/11062b_6250c5d5d61448daa12dbbddd6fba029.svg"
 KUS = f"{IC}/2e2a49_c52f797c3a4c48c88245e42a45c62ff2.svg"
 SAAT = f"{IC}/2e2a49_319bbd73b9044a44b81e47a4f78a9a93.svg"
 KONUM = f"{IC}/2e2a49_a23b983734c8437282ab7f798331146d.svg"
-SANAT = f"{IC}/2e2a49_6e243609b37d464d9ca6059b53aa5217.svg"
-MUZIK = f"{IC}/2e2a49_6b6c957ab7e24a1eaa95a0e22276f108.svg"
-SPOR = f"{IC}/2e2a49_341f12a2847c42e0ba4bbf73ce964f08.svg"
-DIL = f"{IC}/2e2a49_e685781283484a1fa38933f48a1f8ea4.svg"
+SANAT = f"{IC}/brans-sanat.svg"
+MUZIK = f"{IC}/brans-muzik.svg"
+SPOR = f"{IC}/brans-jimnastik.svg"
+DIL = f"{IC}/brans-dil.svg"
+MATEMATIK = f"{IC}/brans-matematik.svg"
+SATRANC = f"{IC}/brans-satranc.svg"
 
 def shell(filename, title, body, extra=""):
     home = filename == "index.php"
@@ -153,8 +155,8 @@ brans = [
     (MUZIK, "Müzik &amp; Orff Eğitimi", "Ritim duygusunu, kulak dolgunluğunu ve işitsel algıyı geliştiren ritim çalgıları ve eğlenceli müzik etkinlikleri uyguluyoruz."),
     (SPOR, "Jimnastik &amp; Çocuk Yogası", "Kaba motor becerilerini, denge ve koordinasyonu güçlendiren fiziksel aktiviteler ve eğlenceli parkur oyunları düzenliyoruz."),
     (DIL, "Yabancı Dil &amp; Dil Gelişimi", "İngilizceyi oyunlar, şarkılar ve günlük aktivitelerle doğal bir süreçte, severek öğrenmelerini sağlıyoruz."),
-    (OYUN, "Matematik &amp; Akıl Oyunları", "Somut materyaller ve zekâ oyunlarıyla mantıksal düşünme, eşleştirme ve problem çözme becerilerini geliştiriyoruz."),
-    (KUS, "Satranç", "Odaklanma, sabır, stratejik düşünme ve problem çözme becerilerini erken yaşta geliştiren eğlenceli satranç etkinlikleri sunuyoruz."),
+    (MATEMATIK, "Matematik &amp; Akıl Oyunları", "Somut materyaller ve zekâ oyunlarıyla mantıksal düşünme, eşleştirme ve problem çözme becerilerini geliştiriyoruz."),
+    (SATRANC, "Satranç", "Odaklanma, sabır, stratejik düşünme ve problem çözme becerilerini erken yaşta geliştiren eğlenceli satranç etkinlikleri sunuyoruz."),
 ]
 brans_html = "\n".join(card(icon, title, text) for icon, title, text in brans)
 brans_page = f'''
