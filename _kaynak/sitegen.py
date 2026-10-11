@@ -3,9 +3,10 @@ from pathlib import Path
 
 root = Path(r"G:\mavipruvaanaokulu.com")
 IC = "images/icons"
-BEBEK = f"{IC}/11062b_93788172d8cc4931a7e2160caa259c43.svg"
-OYUN = f"{IC}/11062b_e368f3f2ade846a8a6611947f3abb241.svg"
-KUTU = f"{IC}/11062b_6250c5d5d61448daa12dbbddd6fba029.svg"
+BEBEK = f"{IC}/sinif-bebek.svg"
+OYUN = f"{IC}/sinif-oyun.svg"
+KUTU = f"{IC}/sinif-okul-oncesi.svg"
+HAZIRLIK = f"{IC}/sinif-hazirlik.svg"
 KUS = f"{IC}/2e2a49_c52f797c3a4c48c88245e42a45c62ff2.svg"
 SAAT = f"{IC}/2e2a49_319bbd73b9044a44b81e47a4f78a9a93.svg"
 KONUM = f"{IC}/2e2a49_a23b983734c8437282ab7f798331146d.svg"
@@ -58,7 +59,7 @@ classes = [
     (BEBEK, False, "Bebek / Oyun Grubu", "24 ayını doldurmuş miniklerimiz için güvenli, şefkatli ve uyarıcı bir ortam sunuyoruz. Duyusal oyunlar, motor beceri geliştirici etkinlikler ve bireysel ilgiyle ilk sosyalleşme adımlarını güvenle atmalarını sağlıyoruz."),
     (OYUN, False, "Oyun &amp; Maceracılar", "2-3 yaş arası çocukların merak ve keşfetme arzusunu destekliyoruz. Dil gelişimi, ince-kaba motor becerileri ve paylaşma duygusunu pekiştiren eğlenceli ve etkileşimli aktivitelerle özgüven inşa ediyoruz."),
     (KUTU, False, "Okul Öncesi", "Sosyal, duygusal ve zihinsel gelişimin hız kazandığı bu dönemde; yaratıcı sanat çalışmaları, grup oyunları ve temel yaşam becerileri ile çocukların potansiyellerini ortaya çıkarıyoruz."),
-    ("images/hedgehog.png", True, "Anasınıfı / İlkokul Hazırlık", "İlkokula geçiş sürecini kolaylaştıracak sistemli bir program sunuyoruz. Mantıksal düşünme, problem çözme, temel okuma-yazma farkındalığı ve özdisiplin kazandırarak onları geleceğe hazırlıyoruz."),
+    (HAZIRLIK, False, "Anasınıfı / İlkokul Hazırlık", "İlkokula geçiş sürecini kolaylaştıracak sistemli bir program sunuyoruz. Mantıksal düşünme, problem çözme, temel okuma-yazma farkındalığı ve özdisiplin kazandırarak onları geleceğe hazırlıyoruz."),
 ]
 
 home_cards = "\n".join(card(icon, title, text) for icon, _photo, title, text in classes)
