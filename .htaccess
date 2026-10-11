@@ -14,3 +14,6 @@ RewriteRule ^(index|hakkimizda|siniflarimiz|gorsel-galeri|okul-gorselleri|brans-
 <FilesMatch "\.(py|json)$">
   Require all denied
 </FilesMatch>
+<Files "mail.local.php">
+  Require all denied
+</Files>

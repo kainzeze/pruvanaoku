@@ -206,7 +206,7 @@ iletisim = '''
           <h2>Bizi Ziyaret Edin</h2>
           <p>Esenbağlar Mh. 71048 Sk. No:5 Mezitli/Mersin</p>
           <p>Tel: <a href="tel:+905324637882">05324637882</a></p>
-          <p>Mail: <a href="mailto:bilgi@pruvaanaokulu.com">bilgi@pruvaanaokulu.com</a></p>
+          <p>Mail: <a href="mailto:bilgi@pruvanaokulu.com">bilgi@pruvanaokulu.com</a></p>
         </div>
       </div>
     </div>
@@ -221,7 +221,7 @@ iletisim = '''
       note.textContent = "Mesajınız alındı. En kısa sürede size dönüş yapacağız.";
     } else if (durum === "hata") {
       note.hidden = false;
-      note.textContent = "Mesaj gönderilemedi. Lütfen 0532 463 78 82 numarasını arayın veya bilgi@pruvaanaokulu.com adresine yazın.";
+      note.textContent = "Mesaj gönderilemedi. Lütfen 0532 463 78 82 numarasını arayın veya bilgi@pruvanaokulu.com adresine yazın.";
     }
   </script>
 '''
@@ -249,9 +249,9 @@ for old in [name.replace(".php", ".html") for name in pages]:
 
 sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for name in pages:
-    loc = "https://mavipruvaanaokulu.com/" if name == "index.php" else "https://mavipruvaanaokulu.com/" + name
+    loc = "https://pruvanaokulu.com/" if name == "index.php" else "https://pruvanaokulu.com/" + name
     sitemap.append(f"<url><loc>{loc}</loc></url>")
 sitemap.append("</urlset>")
 (root / "sitemap.xml").write_text("\n".join(sitemap), encoding="utf-8")
-(root / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://mavipruvaanaokulu.com/sitemap.xml\n", encoding="utf-8")
+(root / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://pruvanaokulu.com/sitemap.xml\n", encoding="utf-8")
 print("done")
