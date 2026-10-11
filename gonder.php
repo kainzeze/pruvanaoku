@@ -1,7 +1,7 @@
 <?php
 /**
  * Iletisim formu.
- * Etki: pruvaanaokulu@gmail.com adresine duz metin e-posta gonderir.
+ * Etki: bilgi@pruvaanaokulu.com adresine duz metin e-posta gonderir.
  * Kayit: form verisi sunucuda dosyaya yazilmaz.
  * Geri donus: gonderim basarisizsa ziyaretci telefon ve e-posta ile yonlendirilir.
  */
@@ -44,7 +44,7 @@ if (!$gecerli) {
     exit;
 }
 
-$to = 'pruvaanaokulu@gmail.com';
+$to = 'bilgi@pruvaanaokulu.com';
 $subject = 'Mavi Pruva web sitesi iletisim formu';
 $body = "Ad: {$ad}\nSoyad: {$soyad}\nE-posta: {$email}\nTelefon: {$telefon}\n\nMesaj:\n{$mesaj}\n";
 $headers = "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nReply-To: {$email}\r\n";
